@@ -4,18 +4,18 @@ exports.handler = function (event, context, callback) {
 
 	ses.sendEmail({
 		Destination: {
-			CcAddresses: [],
-			BccAddresses: [],
-			ToAddresses: ['randika@adroitlogic.com']
+			ToAddresses: ['randika@adroitlogic.com'],
+			CcAddresses: ['randikanavagamuwa@gmail.com'],
+			BccAddresses: []
 		},
 		Message: {
 			Body: {
 				Text: {
-					Data: 'sample ses text'
+					Data: 'new sample'
 				}
 			},
 			Subject: {
-				Data: 'sample ses text'
+				Data: 'sample new new'
 			}
 		},
 		Source: 'randika@adroitlogic.com',
@@ -23,6 +23,8 @@ exports.handler = function (event, context, callback) {
 		if (err) console.log(err, err.stack); // an error occurred
 		else console.log(data);           // successful response
 	});
+
+
 
 
 	callback(null, 'Successfully executed');
